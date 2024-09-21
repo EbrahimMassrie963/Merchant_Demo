@@ -23,8 +23,9 @@ with st.container():
     placeholder = st.empty()
 
     user_input = placeholder.text_input("Enter your question here:")
+    send_button = st.button("Send")
 
-    if user_input:
+    if send_button and user_input:
         service = st.session_state.get("service", None)
         if not service:
             prompt = """
